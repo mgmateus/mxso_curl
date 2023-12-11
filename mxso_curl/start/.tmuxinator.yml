@@ -1,0 +1,9 @@
+name: hydrone_navigation
+root: ./
+startup_window: simu
+windows:
+  - connection:
+      layout: tiled
+      panes:
+        - roslaunch airsim_ros_pkgs airsim_node.launch output:=screen host:=$UE4_IP
+                                                                 
