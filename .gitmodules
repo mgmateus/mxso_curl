@@ -1,0 +1,3 @@
+[submodule "auxiliar_pkgs/depth_image_proc"]
+	path = auxiliar_pkgs/depth_image_proc
+	url = https://github.com/mgmateus/depth_image_proc.git
