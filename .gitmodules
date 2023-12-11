@@ -7,3 +7,6 @@
 [submodule "mxso_curl/src/modules/open3d_point_cloud"]
 	path = mxso_curl/src/modules/open3d_point_cloud
 	url = https://github.com/mgmateus/open3d_point_cloud.git
+[submodule "mxso_curl/src/modules/airsim_gym"]
+	path = mxso_curl/src/modules/airsim_gym
+	url = https://github.com/mgmateus/airsim_gym.git
