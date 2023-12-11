@@ -1,3 +1,9 @@
 [submodule "auxiliar_pkgs/depth_image_proc"]
 	path = auxiliar_pkgs/depth_image_proc
 	url = https://github.com/mgmateus/depth_image_proc.git
+[submodule "mxso_curl/src/modules/airsim_base"]
+	path = mxso_curl/src/modules/airsim_base
+	url = https://github.com/mgmateus/airsim_base.git
+[submodule "mxso_curl/src/modules/open3d_point_cloud"]
+	path = mxso_curl/src/modules/open3d_point_cloud
+	url = https://github.com/mgmateus/open3d_point_cloud.git
