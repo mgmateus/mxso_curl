@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 
 import rospy
+import rospkg
 import time
+import os 
+
 from airsim_base.types import DrivetrainType, YawMode 
 import numpy as np
 
 from airsim_gym.environment import Env
 
+PATH_FILE = os.path.abspath(__file__)
+
 if __name__ == "__main__":
     rospy.init_node("image_collect", anonymous=False)
-    rospy.logwarn("Debbuger ok")
-    env = Env()
+
+    pkg_name = rospkg.get_package_name(PATH_FILE)
+    
+    env = Env(pkg_name)
     
     targetp = [(30, (np.pi/3)), (30, (5*np.pi/6)), (30, (5*np.pi/4)), (30, (7*np.pi/4))]
     
@@ -25,7 +32,7 @@ if __name__ == "__main__":
     z = 20
     for x, y, phi in path:
         rospy.logwarn(f"pose -> {x, y, phi}")
-        env.client.moveToPositionAsync(x, y, z, 10, drivetrain=DrivetrainType.MaxDegreeOfFreedom)
+        env.client.moveToPositionAsync(x, y, z, 10, drivetrain=DrivetrainType.ForwardOnly)
         pos = env.client.getMultirotorState().kinematics_estimated.position
         while abs(pos.x_val -x) >= 0.05 and abs(pos.x_val - y) >= 0.05:
             pos = env.client.getMultirotorState().kinematics_estimated.position
