@@ -1,0 +1,3 @@
+<launch>
+	<node name="time.sleep(2)" pkg="mxso_curl" type="simu_teste.py"/>
+</launch>
