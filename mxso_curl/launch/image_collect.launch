@@ -1,3 +1,4 @@
 <launch>
+	<include file="$(find depth_image_proc)/launch/point_cloud_xyz.launch"/>
 	<node name="image_collect" pkg="mxso_curl" type="image_collect.py"/>
 </launch>
